@@ -1,0 +1,406 @@
+{
+  "type": "APL",
+  "version": "1.0",
+  "theme": "dark",
+  "import": [
+    {
+      "name": "alexa-layouts",
+      "version": "1.0.0"
+    }
+  ],
+  "resources": [
+    {
+      "description": "Stock color for the light theme",
+      "colors": {
+        "colorTextPrimary": "#151920"
+      }
+    },
+    {
+      "description": "Stock color for the dark theme",
+      "when": "${viewport.theme == 'dark'}",
+      "colors": {
+        "colorTextPrimary": "#f0f1ef"
+      }
+    },
+    {
+      "description": "Standard font sizes",
+      "dimensions": {
+        "textSizeBody": 48,
+        "textSizePrimary": 27,
+        "textSizeSecondary": 23,
+        "textSizeSecondaryHint": 25
+      }
+    },
+    {
+      "description": "Common spacing values",
+      "dimensions": {
+        "spacingThin": 6,
+        "spacingSmall": 12,
+        "spacingMedium": 24,
+        "spacingLarge": 48,
+        "spacingExtraLarge": 72
+      }
+    },
+    {
+      "description": "Common margins and padding",
+      "dimensions": {
+        "marginTop": 40,
+        "marginLeft": 60,
+        "marginRight": 60,
+        "marginBottom": 40
+      }
+    }
+  ],
+  "styles": {
+    "textStyleBase": {
+      "description": "Base font description; set color and core font family",
+      "values": [
+        {
+          "color": "@colorTextPrimary",
+          "fontFamily": "Amazon Ember"
+        }
+      ]
+    },
+    "textStyleBase0": {
+      "description": "Thin version of basic font",
+      "extend": "textStyleBase",
+      "values": {
+        "fontWeight": "100"
+      }
+    },
+    "textStyleBase1": {
+      "description": "Light version of basic font",
+      "extend": "textStyleBase",
+      "values": {
+        "fontWeight": "300"
+      }
+    },
+    "mixinBody": {
+      "values": {
+        "fontSize": "@textSizeBody"
+      }
+    },
+    "mixinPrimary": {
+      "values": {
+        "fontSize": "@textSizePrimary"
+      }
+    },
+    "mixinSecondary": {
+      "values": {
+        "fontSize": "@textSizeSecondary"
+      }
+    },
+    "textStylePrimary": {
+      "extend": ["textStyleBase1", "mixinPrimary"]
+    },
+    "textStyleSecondary": {
+      "extend": ["textStyleBase0", "mixinSecondary"]
+    },
+    "textStyleBody": {
+      "extend": ["textStyleBase1", "mixinBody"]
+    },
+    "textStyleSecondaryHint": {
+      "values": {
+        "fontFamily": "Bookerly",
+        "fontStyle": "italic",
+        "fontSize": "@textSizeSecondaryHint",
+        "color": "@colorTextPrimary"
+      }
+    }
+  },
+  "layouts": {},
+  "mainTemplate": {
+    "parameters": ["datasource"],
+    "items": [
+      {
+        "when": "${viewport.shape == 'round'}",
+        "type": "Container",
+        "direction": "column",
+        "items": [
+          {
+            "type": "Image",
+            "source": "${datasource.bodyTemplate7Data.backgroundImage.sources[0].url}",
+            "position": "absolute",
+            "width": "50vw",
+            "height": "50vh"
+          },
+          {
+            "type": "AlexaHeader",
+            "headerTitle": "Netflix Roulette",
+            "fontWeight": "900"
+          },
+          {
+            "type": "Container",
+            "grow": 1,
+            "alignItems": "center",
+            "justifyContent": "center",
+            "items": [
+              {
+                "type": "Image",
+                "source": "${datasource.bodyTemplate7Data.image.sources[0].url}",
+                "scale": "best-fill",
+                "borderRadius": "20px",
+                "width": "50vh",
+                "height": "50vw",
+                "align": "center"
+              },
+              {
+                "type": "Container",
+                "direction": "row",
+                "items": [
+                  {
+                    "type": "Container",
+                    "direction": "column",
+                    "alignItems": "start",
+                    "justifyContent": "start",
+                    "items": [
+                      {
+                        "type": "Text",
+                        "text": "sci-fi",
+                        "fontSize": "3vw"
+                      },
+                      {
+                        "type": "Text",
+                        "text": "thriller",
+                        "fontSize": "3vw"
+                      },
+                      {
+                        "type": "Text",
+                        "text": "cult",
+                        "fontSize": "3vw"
+                      },
+                      {
+                        "type": "Text",
+                        "text": "fantasy",
+                        "fontSize": "3vw"
+                      },
+                      {
+                        "type": "Text",
+                        "text": "docu",
+                        "fontSize": "3vw"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Container",
+                    "direction": "column",
+                    "alignItems": "end",
+                    "justifyContent": "end",
+                    "items": [
+                      {
+                        "type": "Text",
+                        "text": "horror",
+                        "fontSize": "3vw"
+                      },
+                      {
+                        "type": "Text",
+                        "text": "adventure",
+                        "fontSize": "3vw"
+                      },
+                      {
+                        "type": "Text",
+                        "text": "romance",
+                        "fontSize": "3vw"
+                      },
+                      {
+                        "type": "Text",
+                        "text": "comedy",
+                        "fontSize": "3vw"
+                      },
+                      {
+                        "type": "Text",
+                        "text": "mystery",
+                        "fontSize": "3vw"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Container",
+        "items": [
+          {
+            "type": "Image",
+            "source": "",
+            "scale": "best-fill",
+            "position": "absolute",
+            "width": "100vw",
+            "height": "100vh"
+          },
+          {
+            "type": "AlexaHeader",
+            "headerTitle": "${datasource.bodyTemplate7Data.title}",
+            "headerAttributionImage": "${datasource.bodyTemplate7Data.logoUrl}"
+          },
+
+          {
+            "type": "Container",
+            "direction": "row",
+            "paddingLeft": "5vw",
+            "paddingRight": "5vw",
+            "paddingBottom": "5vh",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "items": [
+              {
+                "type": "Image",
+                "height": "75vh",
+                "width": "55vw",
+                "source": "${datasource.bodyTemplate7Data.image.sources[0].url}",
+                "scale": "best-fill",
+                "align": "center"
+              },
+              {
+                "type": "Container",
+                "direction": "column",
+                "paddingLeft": "15vw",
+                "paddingRight": "2vw",
+                "paddingBottom": "5vh",
+                "alignItems": "end",
+                "justifyContent": "center",
+                "items": [
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "horror",
+                      "fontSize": "3vw"
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["horror", "MovieGenre"]
+                    }
+                  },
+
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "adventure",
+                      "fontSize": "3vw"
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["adventure", "MovieGenre"]
+                    }
+                  },
+
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "romance",
+                      "fontSize": "3vw"
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["romance", "MovieGenre"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "comedy",
+                      "fontSize": "3vw"
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["comedy", "MovieGenre"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "mystery",
+                      "fontSize": "3vw"
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["mystery", "MovieGenre"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "science fiction",
+                      "fontSize": "3vw"
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["science fiction", "MovieGenre"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "thriller",
+                      "fontSize": "3vw"
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["thriller", "MovieGenre"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "cult",
+                      "fontSize": "3vw"
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["cult", "MovieGenre"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "fantasy",
+                      "fontSize": "3vw"
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["fantasy", "MovieGenre"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "documentary",
+                      "fontSize": "3vw"
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["documentary", "MovieGenre"]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
