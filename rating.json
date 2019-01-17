@@ -8,13 +8,194 @@
   "layouts": {},
   "mainTemplate": {
     "parameters": ["datasource"],
-    "items": [
+    "items": [{
+        "when": "${viewport.shape == 'round'}",
+        "type": "Container",
+        "direction": "column",
+        "width": "100vw",
+        "height": "100vh",
+        "items": [{
+            "type": "Image",
+            "source": "${datasource.bodyTemplate7Data.data.genrePoster}",
+            "scale": "best-fill",
+            "position": "absolute",
+            "width": "100vw",
+            "opacity": "0.7",
+            "height": "100vh"
+          },
+          {
+            "type": "ScrollView",
+            "width": "100vw",
+            "height": "100vh",
+            "item": [{
+              "type": "Container",
+              "direction": "column",
+              "alignItems": "center",
+              "paddingLeft": "70dp",
+              "paddingTop": "22vw",
+              "paddingRight": "22vw",
+              "items": [{
+                "type": "Sequence",
+                "scrollDirection": "horizontal",
+                "height": "100vh",
+                "width": "100vw",
+                "numbered": true,
+                "paddingTop": "10vw",
+                "opacity": "0.8",
+                "spacing": "10",
+                "paddingLeft": "10vw",
+                "item": [{
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "1",
+                      "fontSize": "33vw",
+                      "width": "60vw"
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["1", "MovieRating"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "2",
+                      "fontSize": "33vw"
+
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["2", "MovieRating"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "3",
+                      "fontSize": "33vw"
+
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["3", "MovieRating"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "4",
+                      "fontSize": "33vw"
+
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["4", "MovieRating"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "5",
+                      "fontSize": "33vw"
+
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["5", "MovieRating"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "6",
+                      "fontSize": "33vw"
+
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["6", "MovieRating"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "7",
+                      "fontSize": "33vw"
+
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["7", "MovieRating"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "8",
+                      "fontSize": "33vw"
+
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["8", "MovieRating"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "9",
+                      "fontSize": "33vw"
+
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["9", "MovieRating"]
+                    }
+                  },
+                  {
+                    "type": "TouchWrapper",
+                    "width": "33vw",
+                    "item": {
+                      "type": "Text",
+                      "text": "10",
+                      "fontSize": "33vw",
+                      "width": "60vw"
+                    },
+                    "onPress": {
+                      "type": "SendEvent",
+                      "arguments": ["10", "MovieRating"]
+                    }
+                  }
+
+                ]
+              }]
+            }]
+          }
+        ]
+      },
       {
         "type": "Container",
         "width": "100vw",
         "height": "100vh",
-        "items": [
-          {
+        "items": [{
             "type": "Image",
             "source": "${datasource.bodyTemplate7Data.data.genrePoster}",
             "scale": "best-fill",
@@ -37,8 +218,6 @@
           {
             "type": "Sequence",
             "scrollDirection": "horizontal",
-            "paddingRight": "@marginRight",
-            "data": "${listData}",
             "height": "70vh",
             "width": "100%",
             "numbered": true,
@@ -46,8 +225,7 @@
             "opacity": "0.8",
             "spacing": "10",
             "paddingLeft": "10vw",
-            "item": [
-              {
+            "item": [{
                 "type": "TouchWrapper",
                 "width": "33vw",
                 "item": {
@@ -187,10 +365,12 @@
                   "arguments": ["10", "MovieRating"]
                 }
               }
+
             ]
           }
         ]
       }
     ]
+
   }
 }
