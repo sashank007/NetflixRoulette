@@ -122,7 +122,7 @@
             "justifyContent": "center",
             "items": [{
                 "type": "Image",
-                "source": "${datasource.bodyTemplate7Data.image.sources[0].url}",
+                "source": "https://s3.amazonaws.com/netflix-roulette/netflix_roulette_background.jpg",
                 "scale": "best-fill",
                 "borderRadius": "20px",
                 "width": "50vh",
@@ -208,14 +208,18 @@
         "height": "100vh",
         "items": [{
             "type": "Image",
-            "source": "${datasource.bodyTemplate7Data.backgroundImage.sources[0].url}",
-            "paddingTop": "60vw",
-            "paddingRight": "50vw",
-            "paddingLeft": "45vw",
+            "source": "https://s3.amazonaws.com/netflix-roulette/netflix_roulette_background.jpg",
+            "paddingRight": "30vw",
+            "left": "10vw",
+            "top": "15vw",
             "position": "absolute",
-            "width": "70vw",
-            "opacity": "0.8",
-            "height": "70vh"
+            "width": "75vw",
+            "height": "60vh"
+          },
+          {
+            "type": "AlexaHeader",
+            "headerTitle": "Netflix Roulette",
+            "headerAttributionImage": "${datasource.bodyTemplate7Data.logoUrl}"
           },
           {
             "type": "Container",

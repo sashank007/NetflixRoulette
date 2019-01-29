@@ -160,7 +160,7 @@
         "height": "100vh",
         "items": [{
             "type": "Image",
-            "source": "${payload.bodyTemplate2Data.backgroundImage.sources[0].url}",
+            "source": "http://hdblackwallpaper.com/wallpaper/2015/05/wallpaper-with-black-background-43-cool-wallpaper.jpg",
             "scale": "best-fill",
             "width": "100vw",
             "height": "100vh",
@@ -215,6 +215,19 @@
                 "align": "center"
               }
             ]
+          },
+          {
+            "when": "${viewport.shape != 'round'}",
+            "type": "TouchWrapper",
+            "item": {
+
+              "type": "AlexaFooter",
+              "footerHint": "Try, Alexa tell me more about this movie."
+            },
+            "onPress": {
+              "type": "SendEvent",
+              "arguments": ["MovieDetails"]
+            }
           }
         ]
       }
